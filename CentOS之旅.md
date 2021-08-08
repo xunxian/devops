@@ -14,8 +14,16 @@ ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ```shell
 systemctl stop firewalld && systemctl disable firewalld
 ```
-# 更换YUM源
+# 修改主机名
+> https://blog.csdn.net/xuheng8600/article/details/79983927
+```shell
+hostnamectl set-hostname xxx
+vi /etc/sysconfig/network --> xxx
+vi /etc/hostname  --> xxx
+vi /etc/hosts -->xxx
 ```
+# 更换YUM源
+```shell
 mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 yum install wget -y
 wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
