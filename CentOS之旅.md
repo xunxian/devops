@@ -1,3 +1,4 @@
+> 学无止境，苦海无涯
 # 关闭SELinux
 ```shell
 临时关闭：setenforce 0
