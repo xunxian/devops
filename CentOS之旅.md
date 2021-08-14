@@ -18,22 +18,22 @@ systemctl stop firewalld && systemctl disable firewalld
 # 修改主机名
 > https://blog.csdn.net/xuheng8600/article/details/79983927
 ```shell
-hostnamectl set-hostname xxx
+hostnamectl set-hostname cn-linux-jenkins
 vi /etc/sysconfig/network --> xxx
 vi /etc/hostname  --> xxx
 vi /etc/hosts -->xxx
 ```
 # 更换YUM源
 ```shell
-mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 yum install wget -y
-wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.163.com/.help/CentOS7-Base-163.repo
 yum clean all
 yum makecache
 ```
 # 安装基本组件
 ```shell
-yum install -y net-tools wget lsof lrzsz [ntpdate] unzip gunizp -y
+yum install -y net-tools wget lsof lrzsz zip gzip unzip telnet git ntpdate
 ```
 # 创建个人管理员用户
 ```shell
@@ -63,9 +63,11 @@ sudo yum install openssl openssl-devel
 wget下载nginx源码包后解压编译
 ./configure --prefix=/opt/nginx
 make && make install
+# nginx.conf user使用fangsh
 配置开机自启脚本
 vi nginx.service
 [Unit]
+User=fangsh
 Description=nginx
 After=network.target
 [Service]
@@ -78,4 +80,11 @@ PrivateTmp=true
 [Install]
 WantedBy=multi-user.target
 保存路径：/usr/lib/systemd/system
+```
+# 使用钉钉内网穿透
+```
+git clone https://github.com/open-dingtalk/pierced.git
+cd pierced/linux
+./ding -config=./ding.cfg -subdomain=maxfang 8000
+http://maxfang.vaiwan.com
 ```
