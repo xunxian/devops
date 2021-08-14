@@ -13,4 +13,10 @@ fatal: 无法访问 'https://github.com/xunxian/devops.git/'：The requested URL
 3、在本地使用git push origin main
 	输入用户名：xxxxx@xx.xxx
 	输入密码：粘贴上面复制的token，回车即可。
+永久保存：
+git config --edit
+[remote "origin"]
+        url = https://xunxian:youtoken@github.com/yunzhiclub/repositoryname
+        fetch = +refs/heads/*:refs/remotes/origin/*
 ```
+
