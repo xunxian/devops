@@ -1,5 +1,9 @@
 package main
 
+/*
+使用go语言进行sha256的加密
+*/
+
 import (
   "fmt"
   "crypto/hmac"
