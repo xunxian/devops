@@ -21,9 +21,11 @@ func main(){
   signature := hex.EncodeToString(m.Sum(nil))
   fmt.Print(signature + "\n\r")
 
-  // 无key加密
-  mm := sha256.New()
-  mm.Write([]byte("你好世界"))
-  res := hex.EncodeToString(mm.Sum(nil))
-  fmt.Println(res)
+  message := []byte("hello world")
+  hash := sha256.New()
+  hash.Write(message)
+  // 计算hash值，并转化为16进制
+  hashCode := hex.EncodeToString(hash.Sum(nil))
+  fmt.Println(hashCode)
+
 }
