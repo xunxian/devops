@@ -90,3 +90,9 @@ cd pierced/linux
 ./ding -config=./ding.cfg -subdomain=maxfang 8000
 http://maxfang.vaiwan.com
 ```
+
+# CentOS7安装EPEL(Extra Packages for Enterprise Linux)
+```
+yum install epel-release
+yum install -y atop
+```
