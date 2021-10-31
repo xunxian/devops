@@ -16,7 +16,7 @@ fatal: 无法访问 'https://github.com/xunxian/devops.git/'：The requested URL
 永久保存：
 git config --edit
 [remote "origin"]
-        url = https://xunxian:youtoken@github.com/yunzhiclub/repositoryname
+        url = https://github_username:github_token@github.com/github_username/repository_name
         fetch = +refs/heads/*:refs/remotes/origin/*
 ```
 
