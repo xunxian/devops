@@ -19,6 +19,11 @@
 6、yum search mysql | grep mysql-community-server
 7、yum info mysql-community-server.x86_64
 8、yum install mysql-community-server.x86_64
+9、systemctl start mysqld
+10、grep password /var/log/mysqld.log # A temporary password is generated for root@localhost: :rdItJa&4Z?7
+11、mysql -uroot -p
+12、ALTER USER 'root'@'localhost' IDENTIFIED BY 'new password'; # 修改密码
+13、yum remove mysql80-community-release-el7-4.noarch # 避免yum自动更新
   
 ```
 
